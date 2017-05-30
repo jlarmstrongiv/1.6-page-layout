@@ -64,7 +64,6 @@ header{
 #main_nav{
     text-align: center;
 }
-
 #main_nav a{
     display: block;
     padding: 10px 2%;
@@ -78,20 +77,35 @@ header{
 }
 
 /*MOBILE*/
+div,
+section {
+    border-radius: 5px;
+}
 header h1 {
     text-align: center;
 }
 #main_content {
     background-color: #ddffff;
+    padding: 0 20px;
 }
 #sidebar_content > div {
     background-color: #ffffdd;
     margin-top: 20px;
+    padding: 0 20px;
 }
 footer {
     margin-top: 20px;
     background-color: #FBDAA7;
 }
+/*#site_footer {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: green;
+}*/
+/*#site_footer a {
+    display: inline-block;
+    color: green;
+}*/
 section,
 nav {
     display: flex;
@@ -99,9 +113,50 @@ nav {
 }
 /*TABLET*/
 @media screen and (min-width: 600px){
-
+    nav {
+        flex-flow: row wrap;
+    }
+    nav a {
+        flex: 1 1 auto;
+        margin-right: 20px;
+    }
+    nav a:last-child {
+        margin-right: 0;
+    }
+    #sidebar_content {
+        flex-flow: row wrap;
+    }
+    #sidebar_content > div {
+        flex: 1 1 25%;
+    }
 }
 /*DESKTOP*/
 @media screen and (min-width: 1100px){
-
+    header h1 {
+        text-align: left;
+    }
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    nav {
+        flex-flow: row wrap;
+        align-items: center;
+        width: 620px;
+    }
+    nav a {
+        flex: 1 1 25%;
+    }
+    #main_content {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    #main_content > div:first-child {
+        flex: 4 1 25%;
+    }
+    #main_content > div:last-child {
+        flex: 0 1 25%;
+        padding-left: 45px;
+    }
 }
